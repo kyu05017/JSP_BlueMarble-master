@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+h3{
+ text-align: center;	
+}
+
+.board_write_category{
+ list-style-type: none;	
+ float: left;
+ border: 1px solid #cecdce;
+	
+}
+
+
+
+.board_write_category li{
+	float:  left;
+	margin-left: 20px;
+	border: none;
+}
+.board_write_category .head{
+	background-color : #eeeeee;
+	font:  black;
+	}
+	
+input[type="text"]:disabled{
+  background: white;
+  border: none;
+}
+
+
+.content_list{
+	border: none;
+}
+
+
+#editor {
+       padding: 16px 24px;
+       border: 1px solid #D6D6D6;
+       border-radius: 4px;
+       height: 500px;
+	   width: 100%;
+	   overflow-y:auto;
+	   
+   }
+ 
+#editor img {
+    	max-width: 70%;
+    	max-height:70%;
+    	
+    }
+ 
+
+ #img-selector {
+       display: none;
+     
+    }
+
+.editor-menu button{
+	border:1px solid #D6D6D6
+}
+
+#btn-bold:after{
+	background-color : #e9ecef
+}
+#btn-bold:before{
+	background-color : #ffffff
+}
+

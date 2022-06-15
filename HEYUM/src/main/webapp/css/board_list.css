@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*
+h5{
+	text-align: center;
+}
+*/
+
+.title{
+/*	background: #ff5000;
+	border-radius: 15px;
+ 	color : white;*/
+ 	height: 60px; width: 200px;
+ 	font-size: 20px;
+}
+
+.title .title_name{
+	padding-top:13px;
+	margin-top : 20px;
+	font-family: 'maplestory';
+	font-size:  40px;
+}
+
+h2{
+	text-align: center;
+}
+.subtitle{
+	
+	border: 1px solid black;
+	border-radius: 15px;
+}
+
+.main_board{
+	border-top: 1px solid black;
+	
+}
+
+.main_board .choise_button{
+	color:#515658;
+	
+}
+
+
+
+.write_thing {
+	position: relative;
+	display: inline-block;
+	margin: auto;
+}
+.write_thing .write_hover {
+	visibility: hidden;
+	width: 220px;
+	background-color: orange;
+	padding: 0;
+	color: white;
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+	bottom: 180%;
+	left: 50%;
+	margin-left: -110px;
+	
+}
+.write_thing .write_hover::after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 20px;
+	border-style: solid;
+	border-color: orange transparent transparent transparent;
+	
+}
+	.write_thing:hover .write_hover { visibility: visible; }
+	
+	
+.board_list .boardlist_tile{
+	width : 10px;
+	text-overflow : ellipsis;
+	
+}

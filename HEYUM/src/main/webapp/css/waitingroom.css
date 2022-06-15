@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.userbox{
+	height : 400px;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+
+.wchattingbox{
+	height: 200px;
+	border : 1px solid black;
+	border-radius: 10px;
+	overflow-y:auto;
+}
+
+
+.wchattingbox::-webkit-scrollbar {
+    width: 12px;
+  }
+
+.wchattingbox::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.wchattingbox::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}

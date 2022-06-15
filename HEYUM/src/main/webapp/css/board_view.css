@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.write_thing {
+	position: relative;
+	display: inline-block;
+	margin: auto;
+}
+.write_thing .write_hover {
+	visibility: hidden;
+	width: 220px;
+	background-color: orange;
+	padding: 0;
+	color: white;
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+	bottom: 180%;
+	left: 50%;
+	margin-left: -110px;
+	
+}
+.write_thing .write_hover::after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 20px;
+	border-style: solid;
+	border-color: orange transparent transparent transparent;
+	
+}
+	.write_thing:hover .write_hover { visibility: visible; }
+	
+	
+	.boardview_content img {
+    	max-width: 100%;
+    	max-height:100%;
+    	
+    }
+	

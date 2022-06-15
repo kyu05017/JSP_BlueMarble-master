@@ -1,0 +1,520 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{
+	font-family: 'GmarketSansBold';
+	box-sizing: border-box;
+	border-collapse: collapse;
+}
+
+.bg{
+	background: url(../img/game/gamebgimg.png);
+}
+
+.container{padding :0px;}
+.row{padding : 0px;	margin : 0px;}
+.sero{ /* 회전시켜서 깨져서 세로 크기 정함 */ height: 72px;}
+/*
+#dicebtn{
+	border: 0;
+    line-height: 2.5;
+    width : 90px;
+    height : 90px;
+    padding: 0 20px;
+    margin : 0 auto;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 45px;
+    background-color:#FAC213;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .1),
+                                      rgba(0, 0, 0, .1) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);	
+}
+#dicebtn:hover{
+	 background-color: #FAC213;
+}
+#dicebtn:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+*/
+.gamerow{ /* 1~9 // 21 ~ 29  */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+
+	background-position: center;
+	z-index : 1;
+}
+
+.gamecolleft{ /* 11~19  */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	transform : translate(50%, -25%) rotate(90deg);
+
+	background-position: center;
+	z-index : 1;
+}
+.gamecolright{ /* 31~39 */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	transform : translate(150%, -25%) rotate(270deg);
+	z-index : 1;
+
+	background-position: center;
+}
+
+.ltcorner, .lbcorner, .rtcorner, .rbcorner{ /* 각 모서리 0,10,20,30 */
+	width: 144px;
+	height: 144px;
+	padding : 0px;
+	font-size:18px;
+	padding-top:5px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	background-color: white;
+}
+
+.colorbarred{ /* 1~9번칸 색깔바 */ 
+	width: 70px;
+	height: 25px;
+	background-color: #F582A7;
+	border-collapse: collapse;	
+	border-bottom : 1px solid black;
+}
+
+.colorbargreen{ /* 11~19번칸 색깔바 */ 
+	width: 70px;
+	height: 25px;
+	background-color: #6BCB77;
+	border-collapse: collapse;	
+	border-bottom : 1px solid black;
+}
+
+.colorbarorange{ /* 21~29번칸 색깔바 */ 
+	width: 70px;
+	height: 25px;
+	background-color: #FFD365;
+	border-collapse: collapse;	
+	border-top : 1px solid black;
+}
+
+.colorbarblue{ /* 31~39번칸 색깔바 */ 
+	width: 70px;
+	height: 25px;
+	background-color: #7FB5FF;
+	border-collapse: collapse;	
+	border-bottom : 1px solid black;
+}
+
+.villaimg, .buildingimg, .hotelimg{ /* 빌라 별장 호텔 공간 */ 
+	width: 22px;
+	height: 22px;
+	padding: 1px;
+}
+
+.cityname{ /* 도시이름 */ 
+	width: 70px;
+	height: 20px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+}
+.citynamebuenos{ /* 도시이름 */ 
+	width: 70px;
+	height: 20px;
+	font-size: 13px;
+	font-weight:bold;
+	transform : translate(0, -20px);
+	text-align: center;	
+}
+.pricetag{ /* 가격 */ 
+	width: 70px;
+	height: 15px;	
+	font-size: 12px;
+	text-align: center;	
+}
+
+.pricetagtop{ /* 가격 */ 
+	width: 70px;
+	height: 27px;
+	padding-top: 12px;
+	font-size: 12px;
+	text-align: center;	
+}
+.cityname{ /* 도시이름 */ 
+	width: 70px;
+	height: 20px;
+	font-size: 13px;
+	text-align: center;	
+}
+
+.startbar{ /* 모서리 공간 */ 
+	width: 144px;
+	height: 45px;
+}
+
+.startbartop{ /* 모서리 공간 */ 
+	width: 144px;
+	height: 27px;
+}
+
+.leftspace{ /* 왼쪽 공간 */ 
+	margin-left: 27px;
+}
+
+.rightspace{ /* 왼쪽 공간 */ 
+	margin-left: 45px;
+}
+
+.centerbox{ /* 가운데 공백 */
+	width: 648px;
+	height: 72px;
+}
+
+.player{ /* 플레이어 말 이동속도 */ 
+position:absolute;
+transition-property: all;
+transition-duration: 1s;
+padding : 1px;
+z-index : 10;
+}	
+
+.imgbox{ /* 주사위그림 칸밖으로 넘칠때 */
+	overflow: hidden;
+}
+
+.leftplayer{ /* 11~19 에서 플레이어 말 회원 원위치 */ transform : rotate(-90deg); }
+.rightplayer{ /* 31~39 에서 플레이어 말 회원 원위치 */ transform : rotate(-270deg); }
+
+.playerarea{ /* 플레이어 말 위치 공간 */
+position : relative ;
+	width: 35px;
+	height: 35px;
+	padding : 0px;
+	z-index : 10;
+}
+
+.playerinfo{ /* 플레이어 정보 */
+	width : 300px;
+	height : 200px;
+	border : 2px solid black;
+	border-radius : 10px;
+	background-color: white;
+}
+
+
+#dicetable2{
+	width : 110px;
+	height : 100px;
+	position:absolute;
+	left : 905px;
+	top : 500px;
+}
+
+.diceplace{ /* 주사위 공간 */
+	width : 110px;
+	height : 200px;
+	position:absolute;
+	left : 905px;
+	top : 600px;
+	text-align: center;
+}
+
+#logotable{
+	width : 300px;
+	height : 300px;
+	position:absolute;
+	left : 810px;
+	top : 200px;
+	text-align: center;
+}
+
+#playerinfo1{ /* 플레이어1 정보 위치 */
+	position:absolute;
+	left : 1620px;
+	top : 736px;
+	
+
+}
+
+#playerinfo2{ /* 플레이어2 정보 위치 */
+	position:absolute;
+	left : 0px;
+	top : 736px;
+	
+
+}
+
+#playerinfo3{ /* 플레이어3 정보 위치 */
+	position:absolute;
+	left : 0px;
+	top : 0px;
+	
+
+}
+
+#playerinfo4{ /* 플레이어4 정보 위치 */
+	position:absolute;
+	left : 1620px;
+	top : 0px;
+	
+
+}
+
+.goldkey{ /* 황금열쇠 */
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+.goldkeytop{ /* 황금열쇠 */
+	padding-top : 22px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+.gamerowgoldkey{ /* 황금열쇠 이미지 */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	background: url(../img/board/gkimg.png) no-repeat;
+	background-position: center;
+}
+
+.gamerowtopgoldkey{ /* 황금열쇠 이미지 */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	background: url(../img/board/gktopimg.png) no-repeat;
+	background-position: center;
+}
+.gamecolleftgoldkey{ /* 황금열쇠 이미지 */
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	transform : translate(50%, -25%) rotate(90deg);
+	background: url(../img/board/gkimg.png) no-repeat;
+	background-position: center;
+}
+
+.gamecolrightgoldkey{ /* 황금열쇠 이미지 */
+	position : relative;
+	width: 72px;
+	height: 144px;
+	padding : 0px;
+	border-collapse: collapse;
+	border : 1px solid black;
+	transform : translate(150%, -25%) rotate(270deg);
+	background: url(../img/board/gkimg.png) no-repeat;
+	background-position: center;
+}
+
+.plane{ /* 콩코드여객기 */
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;	
+}
+
+.jeju{ /* 제주도 */
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+.busan{ /* 부산 */ 
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+.seoul{ /* 서울 */ 
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+.socialfund{ /* 사회복지기금 */
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 11px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;	
+}
+
+.columbia{ /* 컬럼비아호 */
+	padding-top : 5px;
+	width: 70px;
+	height: 45px;
+	font-size: 13px;
+	font-weight:bold;
+	text-align: center;	
+	border-collapse: collapse;	
+}
+
+
+
+#headtable{ /* 헤드테이블 일단 치움 */
+	position:absolute;
+	left : 0px;
+	top : 0px;
+}
+
+#tablescroll{ /* 게임정보메시지 일단 치움 */
+	position:absolute;
+	width : 400px;
+	left : 1520px;
+	top : 275px;
+	background-color: rgba(0,0,0,0.5) ;
+	font-size : 13px;
+	font-weight :bold;
+	color : yellow;
+	
+}
+#tablescroll2{ /* 게임정보메시지 일단 치움 */
+	position:absolute;
+	width : 400px;
+	left : 1520px;
+	top : 475px;
+	background-color: rgba(0,0,0,0.5) ;
+	font-size : 13px;
+	font-weight :bold;
+	color : yellow;
+	
+}
+
+
+.playerinfo img{
+	width: 100%;
+}
+
+.player_city{
+	border: 1px solid black; margin: 3px;
+}
+
+.player_redcity{
+	background-color : #F582A7;
+	height: 30%;
+}
+
+.player_greencity{
+	background-color: #6BCB77; 
+	height: 30%;
+}
+
+.player_yellowcity{
+	background-color: #FFD365; 
+	height: 30%;
+}
+
+.player_bluecity{
+	background-color: #7FB5FF; 
+	height: 30%;
+}
+
+.player_blackcity{
+	background-color: black; 
+	height: 30%;
+}
+
+.player_cityamount{
+	text-align: center;
+	height: 10px;
+}
+
+/* 그림 파일 넣는곳 */
+#board0{ background: url(../img/board/start.png) no-repeat; background-size: cover;}
+#board1{ background: url(../img/board/taibei.png) no-repeat; background-size: cover;}
+#board3{ background: url(../img/board/beijing.png) no-repeat; background-size: cover;}
+#board4{ background: url(../img/board/manila.png) no-repeat; background-size: cover;}
+#board5{ background: url(../img/board/jejudo.png) no-repeat; background-size: cover;}
+#board6{ background: url(../img/board/singa.png) no-repeat; background-size: cover;}
+#board8{ background: url(../img/board/kairo.png) no-repeat; background-size: cover;}	
+#board9{ background: url(../img/board/istanbul.png) no-repeat; background-size: cover;}
+#board10{ background: url(../img/board/space.png) no-repeat; background-size: cover;}
+#board11{ background: url(../img/board/athene.png) no-repeat; background-size: cover;}
+#board13{ background: url(../img/board/copenhagen.png) no-repeat; background-size: cover;}
+#board14{ background: url(../img/board/stockholm.png) no-repeat; background-size: cover;}
+#board15{ background: url(../img/board/concord.png) no-repeat; background-size: cover;}
+#board16{ background: url(../img/board/bern.png) no-repeat; background-size: cover;}
+#board18{ background: url(../img/board/berlin.png) no-repeat; background-size: cover;}
+#board19{ background: url(../img/board/otawa.png) no-repeat; background-size: cover;}
+#board20{ background: url(../img/board/muindo.png) no-repeat; background-size: cover;}
+#board21{ background: url(../img/board/buenos.png) no-repeat; background-size: cover;}
+#board23{ background: url(../img/board/sangpa.png) no-repeat; background-size: cover;}
+#board24{ background: url(../img/board/sydney.png) no-repeat; background-size: cover;}
+#board25{ background: url(../img/board/pusan.png) no-repeat; background-size: cover;}
+#board26{ background: url(../img/board/hawaii.png) no-repeat; background-size: cover;}
+#board27{ background: url(../img/board/risbon.png) no-repeat; background-size: cover;}
+#board29{ background: url(../img/board/madrid.png) no-repeat; background-size: cover;}
+#board30{ background: url(../img/board/social1.png) no-repeat; background-size: cover;}
+#board31{ background: url(../img/board/tokyo.png) no-repeat; background-size: cover;}
+#board32{ background: url(../img/board/columbia.png) no-repeat; background-size: cover;}
+#board33{ background: url(../img/board/paris.png) no-repeat; background-size: cover;}
+#board34{ background: url(../img/board/roma.png) no-repeat; background-size: cover;}
+#board36{ background: url(../img/board/rondon.png) no-repeat; background-size: cover;}
+#board37{ background: url(../img/board/newyork.png) no-repeat; background-size: cover;}
+#board38{ background: url(../img/board/social2.png) no-repeat; background-size: cover;}
+#board39{ background: url(../img/board/seoul.png) no-repeat;  background-size: cover;}
+
+
+
+
+#chbox{
+	
+	position: absolute;
+	left : 1520px;
+	top: 670px;
+}
